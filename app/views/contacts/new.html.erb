@@ -1,0 +1,38 @@
+<%= turbo_frame_tag :new_contact do %>
+  <h3 class="text-indigo-200 text-3xl text-center mb-8"> Contact Me </h3>
+  <%= form_with model: @contact do |f| %>
+    <div class="grid max-w-5xl w-full mx-auto px-4 mx:px-0">
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex flex-col w-full md:w-1/3">
+          <%= f.label :first_name, class: "text-indigo-100" %>
+          <%= f.text_field :first_name, class: "w-full bg-indigo-400 rounded-full text-indigo-200 focus:ring-4 focus:ring-indigo-300" %>
+        </div>
+        <div class="flex flex-col w-full">
+          <%= f.label :last_name, class: "text-indigo-100" %>
+          <%= f.text_field :last_name, class: "w-full bg-indigo-400 rounded-full text-indigo-200 focus:ring-4 focus:ring-indigo-300" %>
+        </div>
+      </div>
+
+      <div class="flex flex-col mt-4">
+        <%= f.label :phone, class: "text-indigo-100" %>
+        <%= f.text_field :phone, class: "w-full bg-indigo-400 rounded-full text-indigo-200 focus:ring-4 focus:ring-indigo-300" %>
+      </div>
+
+
+      <div class="flex flex-col mt-4">
+        <%= f.label :email, class: "text-indigo-100" %>
+        <%= f.text_field :email, class: "w-full bg-indigo-400 rounded-full text-indigo-200 focus:ring-4 focus:ring-indigo-300" %>
+      </div>
+
+      <div class="flex flex-col mt-4">
+        <%= f.label :body, class: "text-indigo-100" %>
+        <%= f.rich_text_area :body, class: "w-full bg-indigo-400 rounded-lg text-indigo-200 focus:ring-4 focus:ring-indigo-300" %>
+      </div>
+
+      <br/>
+
+      <%= f.submit "Send message", class: "bg-blue-500 text-blue-50 p-2 cursor-pointer rounded-full" %>
+    </div>
+
+  <% end %>
+<% end %>

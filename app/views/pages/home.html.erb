@@ -1,0 +1,61 @@
+<div class="flex flex-col items-center py-24 bg-gradient-to-r from-indigo-500 to-blue-500 min-h-[100vh] px-4 md:px-0">
+  <div class="max-w-5xl w-full">
+    <h1 class="text-5xl md:text-7xl text-indigo-100 font-bold"> Enoch Tamulonis </h1>
+    <p class="text-2xl text-indigo-100"> I build web and mobile apps using Ruby on Rails, Hotwire, and Tailwind CSS </p>
+
+    <div class="mt-8 bg-gray-700/75 max-w-xl rounded-lg p-3">
+      <h3 class="text-indigo-200"> Get to know me </h3>
+      <p class="text-xl text-indigo-100">
+        Hey I'm Enoch, I'm a software engineer based out of Austin, Texas.
+        I've been coding since 2016 when I started coding to build solutions for myself such as eccomerce stores and hosting for my music. As I advanced and got more experience I started doing consulting work and realized I love working with clients and solving their issues
+      </p>
+    </div>
+
+    <div class="mt-8 bg-gray-700/75 max-w-xl rounded-lg p-3">
+      <h3 class="text-indigo-200"> My experience </h3>
+      <p class="text-xl text-indigo-100">
+        I have worked with many companies from startups to enterprise level apps, 
+        the scopes of the projects ranged from updates and backlog work to building new features,
+        and new greenfield applications.
+      </p>
+    </div>
+
+    <div class="mt-8 p-3">
+      <h3 class="text-indigo-200"> Companies I've worked with </h3>
+      <div class="flex gap-8 md:gap-16 mt-4 overflow-x-auto">
+        <%= link_to "https://www.wavclouds.com", target: "_new" do %>
+          <%= image_tag "wavclouds.png", class: "w-32 object-cover" %>
+        <% end %>
+
+        <%= link_to "https://www.sunpower.com", target: "_new", class: "flex items-center" do %>
+          <%= image_tag "SunPower.png", class: "w-64 object-cover" %>
+        <% end %>
+
+        <%= link_to "https://www.sba.gov", target: "_new", class: "flex items-center" do %>
+          <%= image_tag "sbagov.svg", class: "w-32 object-cover" %>
+        <% end %>
+
+        <%= link_to "https://www.thegnar.com", target: "_new", class: "flex items-center" do %>
+          <%= image_tag "thegnarcompany.png", class: "w-32 object-cover" %>
+        <% end %>
+
+        <%= link_to "https://www.plasticsurgerypractice.com", target: "_new", class: "flex items-center" do %>
+          <%= image_tag "psp.png", class: "w-32 object-cover" %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="bg-gradient-to-l from-indigo-600 to-blue-600 h-screen pt-8">
+  <% if !session[:contact_request_sent] === true %>
+    <%= turbo_frame_tag :new_contact, src: new_contact_path %>
+  <% else %>
+    <%= turbo_frame_tag :new_contact do %>
+      <div class="w-full flex justify-center">
+        <span class="text-center text-2xl text-indigo-100"> Your message was sent. I will be in touch soon </span>
+      </div>
+    <% end %>
+  <% end %>
+</div>

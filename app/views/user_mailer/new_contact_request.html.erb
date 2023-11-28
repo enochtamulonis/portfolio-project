@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>New Contact Request From <%= @contact.full_name %> </h1>
+    <%= @contact.body %>
+    <p> 
+      <%= @contact.phone %>
+    </p>
+
+    <p> 
+      <%= @contact.email %>
+    </p>
+  </body>
+</html>
